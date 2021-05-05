@@ -1,5 +1,5 @@
 from django.contrib import admin
-from company.models.employee import Employee
+from company.models import Employee
 
 
 @admin.action(description="Удалить данные о начисленной зарплате")
@@ -8,8 +8,8 @@ def delete_total_salary(self, request, queryset):
 
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ("employee_name", "position", "salary", "total_salary", "api_user")
-    list_filter = ("position", "level")
+    list_display = ("employee_name", "position", "salary", "total_salary")
+    list_filter = ("position", "salary")
     actions = [delete_total_salary]
 
 
