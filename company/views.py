@@ -15,5 +15,3 @@ class EmployeeListView(APIView):
         employee = Employee.objects.all()
         serializer = EmployeeListSerializer(employee, many=True)
         return Response(serializer.data)
-
-

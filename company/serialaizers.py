@@ -14,4 +14,3 @@ class EmployeeListSerializer(serializers.ModelSerializer):
             "stat_date",
             "position",
         )
-
